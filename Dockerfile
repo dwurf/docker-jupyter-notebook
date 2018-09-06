@@ -10,6 +10,7 @@ USER $NB_UID
 
 RUN conda install --quiet --yes \
 	-c conda-forge \
+    jupyter_contrib_nbextensions \
 	'plotly' \
 	'pymssql' \
 	'sqlalchemy-redshift' \
@@ -21,6 +22,7 @@ RUN conda install --quiet --yes \
 	'parquet-cpp' && \
     conda clean -tipsy && \
     # Activate some useful extensions by default
+    jupyter nbextensions_configurator enable --sys-prefix && \
 	jupyter nbextension enable execute_time/ExecuteTime --sys-prefix && \
 	jupyter nbextension enable toc2/main --sys-prefix && \
 	jupyter nbextension enable notify/notify --sys-prefix && \
