@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 LABEL maintainer="Darren Wurf <github@darrenwurf.com>"
-LABEL version="v0.2.0-ubuntu"
+LABEL version="v1.0.0"
 
 RUN apt-get update \
   && apt-get -y install --no-install-recommends \
